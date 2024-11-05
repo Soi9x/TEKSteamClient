@@ -3,26 +3,27 @@
 [![NuGet](https://img.shields.io/nuget/v/TEKSteamClient?style=flat-square&label=NuGet)](https://nuget.org/packages/TEKSteamClient)
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Nuclearistt/TEKSteamClient/build.yaml?style=flat-square)](https://github.com/Nuclearistt/TEKSteamClient/actions/workflows/build.yaml)
 
-## Overview
+## Tổng quan
 
-TEK Steam Client is a fast Steam client implementation that allows installing, updating and validating any app by giving you ability to provide depot decryption keys and manifest request codes from external sources if app is not owned on the account
+TEK Steam Client là một triển khai nhanh chóng của Steam client cho phép cài đặt, cập nhật và xác thực bất kỳ ứng dụng nào bằng cách cung cấp cho bạn khả năng cung cấp các khóa giải mã depot và mã yêu cầu manifest từ các nguồn bên ngoài nếu ứng dụng không được sở hữu trên tài khoản.
 
-## Features
+## Tính năng
 
-+ CM client that allows logging in with any Steam account or using anonymous account, getting depot decryption keys, latest manifest IDs, manifest request codes (custom methods for getting those may be provided if you know that account you're logged in doesn't have access to them), and workshop item details
-+ CDN client that can download any manifest or patch, which are then converted to custom file format using tree structure that allows many optimizations
-+ AppManager class that provides convenient way to manage Steam apps and update or validate specific depots or workshop items
-+ Thread-based chunk downloading that uses LZMA decoder optimized for it and allows you to customize scale based on available CPU and network resources
-+ Optimized delta patching and chunk relocation algorithm that works MUCH faster than Steam's own while using MUCH less disk space
-+ Update/validation process can be paused at any step with cancellation token with no progress loss
 
-## How to get depot decryption keys and manifest request codes
++  CM client cho phép đăng nhập bằng bất kỳ tài khoản Steam nào hoặc sử dụng tài khoản ẩn danh, lấy khóa giải mã depot, ID manifest mới nhất, mã yêu cầu manifest (các phương pháp tùy chỉnh để lấy những thông tin này có thể được cung cấp nếu bạn biết rằng tài khoản bạn đang đăng nhập không có quyền truy cập vào chúng), và chi tiết về các mục workshop.
++  CDN client có thể tải xuống bất kỳ manifest hoặc bản vá nào, sau đó được chuyển đổi thành định dạng tệp tùy chỉnh sử dụng cấu trúc cây cho phép nhiều tối ưu hóa.
++  Lớp AppManager cung cấp cách thuận tiện để quản lý các ứng dụng Steam và cập nhật hoặc xác thực các depot hoặc mục workshop cụ thể.
++ Tải xuống theo từng phần dựa trên luồng sử dụng bộ giải mã LZMA được tối ưu hóa cho nó và cho phép bạn tùy chỉnh quy mô dựa trên tài nguyên CPU và mạng có sẵn.
++  Thuật toán vá delta và định vị từng phần được tối ưu hóa hoạt động NHANH HƠN nhiều so với của Steam trong khi sử dụng ÍT không gian đĩa hơn.
++  Quá trình cập nhật/xác thực có thể được tạm dừng ở bất kỳ bước nào với mã hủy bỏ mà không mất tiến trình.
 
-To download a Steam app you need 2 things: its depot decryption key(s) and a source for manifest request codes.
+## Cách lấy khóa giải mã depot và mã yêu cầu manifest
 
-Depot decryption keys are never updated and you only need to get them once, either by using GetDepotDecryptionKey method of a CMClient logged into an account that owns the app (anonymous will work for free apps), or from `Steam\config\config.vdf` file in Steam installation that downloaded the depot at least once, at "InstallConfigStore" > "Software" > "Valve" > "Steam" > "depots", use Convert.FromHexString() on the "DecryptionKey" entry values to get binary representations that you can use.
+Để tải xuống một ứng dụng Steam, bạn cần 2 thứ: khóa giải mã depot và nguồn cho mã yêu cầu manifest.
 
-Manifest request codes are regularly updated and you need to maintain a CMClient logged into account that owns the app to get them. CDNClient/AppManager will automatically try to get them using their CMClient, but you may use CMClient.ManifestRequestCodeSourceOverrides to forward requests for specific depots elsewhere, for example [MRCP](https://github.com/Nuclearistt/MRCP), so you can process these requests securely on a remote server without exposing your account credentials to client side
+Khóa giải mã depot không bao giờ được cập nhật và bạn chỉ cần lấy chúng một lần, bằng cách sử dụng phương thức GetDepotDecryptionKey của một CMClient đã đăng nhập vào tài khoản sở hữu ứng dụng (tài khoản ẩn danh sẽ hoạt động cho các ứng dụng miễn phí), hoặc từ tệp Steam\config\config.vdf trong cài đặt Steam đã tải xuống depot ít nhất một lần, tại "InstallConfigStore" > "Software" > "Valve" > "Steam" > "depots", sử dụng Convert.FromHexString() trên các giá trị mục "DecryptionKey" để có được các biểu diễn nhị phân mà bạn có thể sử dụng.
+
+Mã yêu cầu manifest thường xuyên được cập nhật và bạn cần duy trì một CMClient đã đăng nhập vào tài khoản sở hữu ứng dụng để lấy chúng. CDNClient/AppManager sẽ tự động cố gắng lấy chúng bằng cách sử dụng CMClient của chúng, nhưng bạn có thể sử dụng CMClient.ManifestRequestCodeSourceOverrides để chuyển tiếp các yêu cầu cho các depot cụ thể đến nơi khác, ví dụ như MRCP [], để bạn có thể xử lý các yêu cầu này một cách an toàn trên máy chủ từ xa mà không tiết lộ thông tin xác thực tài khoản của bạn cho phía client.
 
 ## Use example
 
