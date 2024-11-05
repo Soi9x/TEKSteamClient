@@ -23,7 +23,7 @@ TEK Steam Client là một triển khai nhanh chóng của Steam client cho phé
 
 Khóa giải mã depot không bao giờ được cập nhật và bạn chỉ cần lấy chúng một lần, bằng cách sử dụng phương thức GetDepotDecryptionKey của một CMClient đã đăng nhập vào tài khoản sở hữu ứng dụng (tài khoản ẩn danh sẽ hoạt động cho các ứng dụng miễn phí), hoặc từ tệp Steam\config\config.vdf trong cài đặt Steam đã tải xuống depot ít nhất một lần, tại "InstallConfigStore" > "Software" > "Valve" > "Steam" > "depots", sử dụng Convert.FromHexString() trên các giá trị mục "DecryptionKey" để có được các biểu diễn nhị phân mà bạn có thể sử dụng.
 
-Mã yêu cầu manifest thường xuyên được cập nhật và bạn cần duy trì một CMClient đã đăng nhập vào tài khoản sở hữu ứng dụng để lấy chúng. CDNClient/AppManager sẽ tự động cố gắng lấy chúng bằng cách sử dụng CMClient của chúng, nhưng bạn có thể sử dụng CMClient.ManifestRequestCodeSourceOverrides để chuyển tiếp các yêu cầu cho các depot cụ thể đến nơi khác, ví dụ như MRCP [], để bạn có thể xử lý các yêu cầu này một cách an toàn trên máy chủ từ xa mà không tiết lộ thông tin xác thực tài khoản của bạn cho phía client.
+Mã yêu cầu manifest thường xuyên được cập nhật và bạn cần duy trì một CMClient đã đăng nhập vào tài khoản sở hữu ứng dụng để lấy chúng. CDNClient/AppManager sẽ tự động cố gắng lấy chúng bằng cách sử dụng CMClient của chúng, nhưng bạn có thể sử dụng CMClient.ManifestRequestCodeSourceOverrides để chuyển tiếp các yêu cầu cho các depot cụ thể đến nơi khác, ví dụ như MRCP [https://github.com/Nuclearistt/MRCP], để bạn có thể xử lý các yêu cầu này một cách an toàn trên máy chủ từ xa mà không tiết lộ thông tin xác thực tài khoản của bạn cho phía client.
 
 ## Use example
 
