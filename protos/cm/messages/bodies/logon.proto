@@ -1,0 +1,21 @@
+syntax="proto3";
+
+package teksteamclient.cm.messages.bodies;
+option csharp_namespace = "TEKSteamClient.CM.Messages.Bodies";
+
+message LogOn
+{
+	uint32 protocol_version = 1;
+	uint32 cell_id = 3;
+	string client_language = 6;
+	int32 client_os_type = 7;
+	optional bool should_remember_password = 8;
+	optional string account_name = 50;
+	optional string access_token = 108;
+}
+message LogOnResponse
+{
+	optional int32 result = 1;
+	optional int32 heartbeat_interval = 2;
+	optional uint32 cell_id = 7;
+}

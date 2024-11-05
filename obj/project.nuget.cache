@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "BZb6HCL+WTw=",
+  "success": true,
+  "projectFilePath": "D:\\tes\\TEKSteamClient-main\\TEKSteamClient-main\\TEKSteamClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\BinhNguyen\\.nuget\\packages\\google.protobuf\\3.26.0\\google.protobuf.3.26.0.nupkg.sha512",
+    "C:\\Users\\BinhNguyen\\.nuget\\packages\\google.protobuf.tools\\3.26.0\\google.protobuf.tools.3.26.0.nupkg.sha512",
+    "C:\\Users\\BinhNguyen\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.5\\microsoft.net.illink.tasks.8.0.5.nupkg.sha512",
+    "C:\\Users\\BinhNguyen\\.nuget\\packages\\system.io.hashing\\8.0.0\\system.io.hashing.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

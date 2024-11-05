@@ -1,0 +1,12 @@
+D:\tes\TEKSteamClient-main\TEKSteamClient-main\bin\Debug\TEKSteamClient.deps.json
+D:\tes\TEKSteamClient-main\TEKSteamClient-main\bin\Debug\TEKSteamClient.dll
+D:\tes\TEKSteamClient-main\TEKSteamClient-main\bin\Debug\TEKSteamClient.pdb
+D:\tes\TEKSteamClient-main\TEKSteamClient-main\obj\Debug\TEKSteamClient.csproj.AssemblyReference.cache
+D:\tes\TEKSteamClient-main\TEKSteamClient-main\obj\Debug\TEKSteamClient.GeneratedMSBuildEditorConfig.editorconfig
+D:\tes\TEKSteamClient-main\TEKSteamClient-main\obj\Debug\TEKSteamClient.AssemblyInfoInputs.cache
+D:\tes\TEKSteamClient-main\TEKSteamClient-main\obj\Debug\TEKSteamClient.AssemblyInfo.cs
+D:\tes\TEKSteamClient-main\TEKSteamClient-main\obj\Debug\TEKSteamClient.csproj.CoreCompileInputs.cache
+D:\tes\TEKSteamClient-main\TEKSteamClient-main\obj\Debug\TEKSteamClient.dll
+D:\tes\TEKSteamClient-main\TEKSteamClient-main\obj\Debug\refint\TEKSteamClient.dll
+D:\tes\TEKSteamClient-main\TEKSteamClient-main\obj\Debug\TEKSteamClient.pdb
+D:\tes\TEKSteamClient-main\TEKSteamClient-main\obj\Debug\ref\TEKSteamClient.dll
